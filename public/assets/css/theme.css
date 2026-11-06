@@ -1,0 +1,229 @@
+/* Shared appearance for login and all authenticated workspaces. */
+html{color-scheme:light}
+.theme-toggle{position:fixed;right:18px;top:14px;z-index:1000;display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:8px 12px;border:1px solid #d6e1f2;border-radius:20px;background:#fff;color:#345482;font:500 12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;box-shadow:0 3px 12px #1234590a;cursor:pointer}
+.theme-toggle:hover{background:#edf3ff}.theme-toggle:focus-visible{outline:2px solid #6099ff;outline-offset:3px}.theme-icon{font-size:18px;line-height:1}
+.main>header{padding-right:130px}.login-masthead{padding-right:155px!important}
+html[data-theme=dark]{color-scheme:dark;background:#101827;color:#e1e9f7;--blue:#81b0ff;--ink:#e1e9f7;--muted:#a8b7cd;--line:#34425b}
+html[data-theme=dark] body{background:#101827;color:#e1e9f7;--blue:#81b0ff;--ink:#e1e9f7;--muted:#a8b7cd;--line:#34425b}
+html[data-theme=dark] :is(.sidebar,.panel,.card,.records,dialog){background:#192438;color:#e1e9f7;border-color:#34425b}
+html[data-theme=dark] :is(input,select,textarea,.account-form input:not([type=hidden]),.record-section textarea,.record-section select){background:#111d30;color:#e1e9f7;border-color:#425373}
+html[data-theme=dark] :is(.secondary,.edit-link,.account-actions button,.search-form>button,.theme-toggle){background:#202e45;color:#bad3ff;border-color:#425373}
+html[data-theme=dark] :is(.primary,.primary-button,.signin-button){background:#326fdf;color:#fff;border-color:#326fdf}
+html[data-theme=dark] :is(.muted,.small,.sub,.sidebottom,.eyebrow,.cardtop,.stat-note,footer,.tablefoot,.section-kicker,.field-hint,.patient-search-heading span){color:#a8b7cd}
+html[data-theme=dark] :is(.brand,.login-brand){color:#e1e9f7}
+html[data-theme=dark] :is(header,.panelhead,td,.tablefoot,.case,.record-history,.timeline-item,.contact-item,.record-summary>div){border-color:#34425b}
+html[data-theme=dark] th{background:#202e45;color:#b7c8e1}
+html[data-theme=dark] :is(.banner,.note,.details,.notice,.workspace-status,.patient-search,.account-count,.empty-symbol,.avatar){background:#203452;color:#c2d7f7;border-color:#3a5378}
+html[data-theme=dark] .patient-search #search{background:#111d30}
+html[data-theme=dark] :is(.link,.record-history summary,.patient-search-heading label,.logout,.cancel-link){color:#91bbff}
+html[data-theme=dark] .nav{color:#b8c8e0}
+html[data-theme=dark] .nav.active{background:#263e62;color:#bad3ff}
+html[data-theme=dark] .sidebar nav.sidebar-highlight::before{background:#263e62}
+html[data-theme=dark] .sidebar nav.sidebar-highlight .nav.active{background:transparent}
+html[data-theme=dark] .pill{background:#293850;color:#c0cee1}
+html[data-theme=dark] .pill.upcoming{background:#233e65;color:#b0d0ff}
+html[data-theme=dark] .pill.completed{background:#173f36;color:#a0e7c4}
+html[data-theme=dark] .pill.overdue{background:#493125;color:#ffcca5}
+html[data-theme=dark] :is(.notice.error,.record-page .notice.error,.account-error,.login-error){background:#482a32;color:#ffd0ce;border-color:#80505c}
+html[data-theme=dark] .monitor-login{background-color:#101827;background-image:linear-gradient(#3c71bb14 1px,transparent 1px),linear-gradient(90deg,#3c71bb14 1px,transparent 1px);background-size:40px 40px}
+html[data-theme=dark] .monitor-login::after{background:linear-gradient(0deg,#17469255,transparent)}
+html[data-theme=dark] .monitor-login .signin-panel{background:#192438f5;border-color:#34425b;box-shadow:0 20px 65px #0004}
+html[data-theme=dark] :is(.signin-description,.account-help,.clinic-wordmark,.signin-panel footer){color:#a8b7cd}
+html[data-theme=dark] :is(.signin-panel h1,.login-eyebrow){color:#91bbff}
+html[data-theme=dark] .signin-panel label{color:#d3def0}
+html[data-theme=dark] .role-options.sliding-roles{background:#111d30;border-color:#34425b}
+html[data-theme=dark] .role-options.sliding-roles::before{background:#29456d}
+html[data-theme=dark] .role-options a{color:#b5c6df}
+html[data-theme=dark] .role-options.sliding-roles a[aria-current]{color:#c3daff}
+html[data-theme=dark] .secret-input button{color:#afccff;background:transparent}
+html[data-theme=dark] .signin-panel footer{background:transparent;border-color:#34425b}
+@media(max-width:750px){.theme-toggle{right:12px;top:12px;width:38px;padding:7px;justify-content:center}.theme-toggle .theme-label{display:none}.sidebar{padding-right:58px}.main>header{padding-right:0}.login-masthead{padding-right:65px!important}.clinic-wordmark{display:none}}
+html[data-theme=dark] .login-masthead{background:transparent;border-color:transparent}
+html[data-theme=dark] :is(.clinic-wordmark strong,.clinic-wordmark span,.signin-panel .signin-description,.signin-panel .account-help){color:#a8b7cd}
+
+/* One sun disc becomes a crescent as its cutout slides in and rays retract. */
+.theme-toggle .theme-icon{display:block;flex:none;width:24px;height:24px;overflow:visible;color:#c77c13}
+.theme-orb{transform-origin:12px 12px;transition:transform .55s cubic-bezier(.22,.7,.3,1)}
+.theme-disc{transition:r .55s cubic-bezier(.22,.7,.3,1)}
+.theme-moon-cutout{transform:translate(0,0);transition:transform .55s cubic-bezier(.22,.7,.3,1)}
+.theme-rays{transform-origin:12px 12px;transition:transform .45s ease,opacity .3s ease;opacity:1}
+html[data-theme=dark] .theme-toggle .theme-icon{color:#b7d3ff}
+html[data-theme=dark] .theme-disc{r:8px}
+html[data-theme=dark] .theme-moon-cutout{transform:translate(-8px,8px)}
+html[data-theme=dark] .theme-orb{transform:rotate(-15deg)}
+html[data-theme=dark] .theme-rays{transform:rotate(65deg) scale(.5);opacity:0}
+@media(prefers-reduced-motion:reduce){.theme-orb,.theme-disc,.theme-moon-cutout,.theme-rays{transition:none}}
+
+/* Compact sliding pill, with a white light-mode thumb as requested. */
+.theme-toggle{width:78px;height:42px;min-height:42px;padding:4px;display:block;border:0;border-radius:24px;background:#9aa99c;box-shadow:inset 0 0 0 1px #273a4020;transition:background .4s ease}
+.theme-toggle:hover{background:#899c8c}
+.theme-toggle .theme-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.theme-thumb{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;box-shadow:0 2px 5px #0002;transform:translateX(0);transition:transform .5s cubic-bezier(.22,.7,.3,1),background .4s ease}
+.theme-toggle .theme-icon{width:25px;height:25px;color:#e8a923}
+html[data-theme=dark] .theme-toggle{background:#2196ed;border:0;color:#fff}
+html[data-theme=dark] .theme-toggle:hover{background:#378ff1}
+html[data-theme=dark] .theme-thumb{transform:translateX(36px);background:#080e18}
+html[data-theme=dark] .theme-toggle .theme-icon{color:#ffd04b}
+@media(max-width:750px){.theme-toggle{width:68px;height:38px;min-height:38px;padding:4px}.theme-thumb{width:30px;height:30px}html[data-theme=dark] .theme-thumb{transform:translateX(30px)}.sidebar{padding-right:88px}.login-masthead{padding-right:95px!important}}
+@media(prefers-reduced-motion:reduce){.theme-toggle,.theme-thumb{transition:none}}
+
+/* Raised enamel clinic mark and softly embossed wordmark. */
+.brand,.login-brand{color:#263b5c;text-shadow:0 1px 0 #fff,0 2px 1px #12294822,0 3px 5px #15396615}
+.brand .logo,.login-brand .brand-mark{position:relative;isolation:isolate;background:radial-gradient(ellipse at 28% 5%,#8fbeff80,transparent 58%),linear-gradient(145deg,#4689fa 0%,#2463db 52%,#1646b1 100%);border-radius:11px;box-shadow:inset 0 1px 1px #ffffff90,inset 1px 0 1px #ffffff35,inset 0 -2px 3px #082b8d85,0 3px 0 #143d9833,0 6px 10px #153d7626;color:#fff;text-shadow:0 1px 1px #113a8c,0 -1px 0 #fff5;vertical-align:middle}
+.brand .logo::after{content:"";position:absolute;inset:1px;border-radius:10px;background:linear-gradient(160deg,#ffffff35,transparent 46%);pointer-events:none}
+.login-brand .brand-mark rect{fill:transparent}
+.login-brand .brand-mark path{filter:drop-shadow(0 1px 1px #113a8c99)}
+html[data-theme=dark] :is(.brand,.login-brand){color:#e1e9f7;text-shadow:0 1px 0 #8ca3c04d,0 2px 1px #0008,0 4px 8px #0005}
+html[data-theme=dark] .brand .logo,html[data-theme=dark] .login-brand .brand-mark{box-shadow:inset 0 1px 1px #ffffff80,inset 1px 0 1px #ffffff30,inset 0 -2px 3px #082b8d99,0 3px 0 #07142d99,0 7px 12px #0005}
+
+/* Use a centered vector cross, independent of the font baseline. */
+.brand .logo{display:inline-grid;place-items:center;line-height:1}
+.brand .logo svg{display:block;width:24px;height:24px;filter:drop-shadow(0 1px 1px #113a8c99)}
+
+/* Workspace appearance control belongs to the sidebar footer. */
+.sidebar-appearance{display:flex;justify-content:flex-end;flex-shrink:0;padding-top:16px;margin-top:16px;border-top:1px solid #dfe6f1}
+.sidebar-appearance .theme-toggle{position:relative;top:auto;right:auto;z-index:auto;flex-shrink:0}
+html[data-theme=dark] .sidebar-appearance{border-color:#34425b}
+.sidebar~.main>header{padding-right:0}
+@media(max-width:750px){.sidebar{padding-right:17px}.sidebar-appearance{padding-top:12px;margin-top:12px}.sidebar-appearance .theme-toggle{top:auto;right:auto}}
+
+/* Quiet, compact appearance switch at the left edge of the sidebar footer. */
+.sidebar-appearance{justify-content:flex-start;border-top:0;padding-top:8px;margin-top:12px}
+.sidebar-appearance .theme-toggle{width:54px;height:30px;min-height:30px;padding:3px;background:#dce4ef;box-shadow:inset 0 0 0 1px #64748b18}
+.sidebar-appearance .theme-thumb{width:24px;height:24px;box-shadow:0 1px 3px #0002}
+.sidebar-appearance .theme-toggle .theme-icon{width:18px;height:18px}
+html[data-theme=dark] .sidebar-appearance .theme-toggle{background:#2a3b55}
+html[data-theme=dark] .sidebar-appearance .theme-thumb{transform:translateX(24px);background:#111c2d}
+.sidebar-appearance .theme-toggle:hover{background:#cbd8e9}
+html[data-theme=dark] .sidebar-appearance .theme-toggle:hover{background:#354b6c}
+
+/* Login always uses light appearance and needs no space for a corner switch. */
+.login-light-only .login-masthead{padding-right:42px!important}
+@media(max-width:850px){.login-light-only .login-masthead{padding-right:24px!important}}
+@media(max-width:600px){.login-light-only .login-masthead{padding-right:20px!important}}
+
+/* Keep the appearance switch anchored after removing sidebar footer copy. */
+.sidebar-appearance{margin-top:auto}
+@media(max-width:750px){.sidebar-appearance{margin-top:12px}}
+
+/* Patients reach their own care actions without passing through a preview dialog. */
+.patient-record-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.patient-record-actions .primary{text-decoration:none;font-size:12px;padding:10px 12px;white-space:nowrap}
+.patient-record-actions .link{text-decoration:none;font-size:12px}
+#condition,#aftercare{scroll-margin-top:20px}
+
+/* Account disclosure groups appearance and sign out in the header. */
+.account-menu{position:relative;flex-shrink:0;z-index:30}
+.account-menu-trigger{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;border-radius:12px;padding:5px 7px;color:inherit}
+.account-menu-trigger::-webkit-details-marker{display:none}
+.account-menu-trigger:hover{background:#eaf1ff}
+.account-menu-trigger:focus-visible{outline:2px solid #6099ff;outline-offset:3px}
+.account-menu-identity{display:flex;flex-direction:column;gap:4px;text-align:right}
+.account-menu-trigger .avatar{display:grid;place-items:center;width:38px;height:38px;padding:0}
+.account-menu-chevron{color:#71829b;font-size:16px}
+.account-menu[open] .account-menu-chevron{transform:rotate(180deg)}
+.account-menu-panel{position:absolute;top:calc(100% + 10px);right:0;width:230px;max-width:calc(100vw - 32px);padding:8px;border:1px solid #dfe6f1;border-radius:13px;background:#fff;box-shadow:0 12px 35px #16305420;color:#233653}
+.account-appearance-row{display:flex;align-items:center;justify-content:space-between;padding:10px;gap:15px;font-size:13px}
+.account-menu-panel form{border-top:1px solid #e4ebf5;margin:5px 0 0;padding-top:5px}
+.account-signout{display:block;width:100%;border:0;background:transparent;color:#a44242;text-align:left;padding:12px 10px;border-radius:7px;font:inherit;font-size:13px;cursor:pointer}
+.account-signout:hover{background:#fff0f0}
+.account-menu .theme-toggle{position:relative;inset:auto;z-index:auto;flex-shrink:0;width:54px;height:30px;min-height:30px;padding:3px;background:#dce4ef;box-shadow:inset 0 0 0 1px #64748b18}
+.account-menu .theme-thumb{width:24px;height:24px;box-shadow:0 1px 3px #0002}
+.account-menu .theme-toggle .theme-icon{width:18px;height:18px}
+html[data-theme=dark] .account-menu .theme-toggle{background:#2a3b55}
+html[data-theme=dark] .account-menu .theme-thumb{transform:translateX(24px);background:#111c2d}
+html[data-theme=dark] .account-menu-panel{background:#192438;color:#e1e9f7;border-color:#34425b;box-shadow:0 12px 35px #0005}
+html[data-theme=dark] .account-menu-trigger:hover{background:#243550}
+html[data-theme=dark] .account-menu-panel form{border-color:#34425b}
+html[data-theme=dark] .account-signout{color:#ffb1b1}
+html[data-theme=dark] .account-signout:hover{background:#452b37}
+@media(max-width:750px){.account-menu-identity{display:none}.account-menu-trigger{gap:5px}.account-menu-panel{width:220px}}
+
+/* Crisp, centered chevron independent of the system font. */
+.account-menu-chevron{display:block;width:16px;height:16px;flex:none;margin-left:2px;color:#71829b;transform-origin:center;transition:transform .2s ease}
+html[data-theme=dark] .account-menu-chevron{color:#a8b7cd}
+@media(prefers-reduced-motion:reduce){.account-menu-chevron{transition:none}}
+
+/* A quiet workspace header with account controls only. */
+.main>header.workspace-header{justify-content:flex-end}
+
+/* Overview focuses on a few care actions; lists use a dedicated full-width page. */
+.followup-list-workspace{grid-template-columns:minmax(0,1fr)}
+.followup-tabs{display:flex;gap:6px;border-bottom:1px solid #dfe6f1;margin:0 0 22px}
+.followup-tabs a{padding:12px 18px;text-decoration:none;color:#74839a;border-bottom:2px solid transparent;font-weight:550}
+.followup-tabs a[aria-current]{color:#2463db;border-color:#2463db}
+.care-overview{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;margin:24px 0}
+.overview-block{padding:26px;min-width:0}.overview-block h2{margin:0 0 20px}.overview-block h3{font-size:21px;line-height:1.4;margin:12px 0}.overview-block .actions{justify-content:flex-start;flex-wrap:wrap}.overview-block a.primary,.overview-block a.secondary{text-decoration:none;display:inline-block}.overview-block .preserve-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.8;font-size:14px}.overview-item{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid #e3eaf4;padding:16px 0}.overview-item p{margin:5px 0}.overview-item a{flex-shrink:0;text-decoration:none}.overview-link{display:inline-block;margin-top:12px;color:#2463db;font-weight:550;text-decoration:none}.overview-date{font-size:14px;color:#74839a}.overview-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}.overview-metric{padding:22px}.overview-metric strong{display:block;font-size:30px;margin:10px 0}.overview-block .empty{padding:20px 0;text-align:left}
+html[data-theme=dark] :is(.followup-tabs,.overview-item){border-color:#34425b}html[data-theme=dark] :is(.overview-date,.followup-tabs a){color:#a8b7cd}html[data-theme=dark] :is(.overview-link,.followup-tabs a[aria-current]){color:#91bbff}
+@media(max-width:900px){.care-overview{grid-template-columns:1fr}}@media(max-width:600px){.overview-block{padding:21px}.overview-metrics{gap:8px}.overview-metric{padding:14px}.overview-metric strong{font-size:25px}.overview-item{flex-wrap:wrap}}
+
+/* Compact patient summary and edit dialog without duplicate clinical content. */
+#record-dialog{color:#233653}
+.followup-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.followup-dialog-heading h2{margin:0;font-size:20px}
+.record-open-link{color:#2463db;font-size:12px;font-weight:550;text-decoration:none}
+.record-open-link:hover{text-decoration:underline}
+.followup-patient-summary{padding:18px;background:#f5f8fd;border:1px solid #e4ebf5;border-radius:10px;margin-bottom:22px}
+.followup-patient-summary>strong{display:block;font-size:15px;margin-bottom:5px}
+.followup-patient-summary>.muted{font-size:12px}
+.followup-patient-summary dl{margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.followup-patient-summary dt{font-size:11px;color:#74839a;margin-bottom:5px}
+.followup-patient-summary dd{font-size:13px;margin:0;overflow-wrap:anywhere}
+html[data-theme=dark] #record-dialog{color:#e1e9f7}
+html[data-theme=dark] .followup-patient-summary{background:#202e45;border-color:#34425b}
+html[data-theme=dark] .followup-patient-summary dt{color:#a8b7cd}
+html[data-theme=dark] .record-open-link{color:#91bbff}
+@media(max-width:420px){.followup-patient-summary dl{grid-template-columns:1fr;gap:12px}}
+
+/* Compact Follow-ups header replaces the separate empty header/title rows. */
+.main>header.followups-header{height:auto;min-height:84px;padding:16px 0;justify-content:space-between;gap:20px}
+.followups-header h1{font-size:28px;margin:0}
+.workspace-header-actions{display:flex;align-items:center;gap:24px}
+.followups-header+.followup-tabs{margin-top:14px}
+.followup-list-workspace .panelhead{padding:18px 22px}
+.sidebar .sub{margin-bottom:24px}
+@media(max-width:750px){.main>header.followups-header{min-height:72px;gap:12px;flex-wrap:wrap}.followups-header h1{font-size:24px}.workspace-header-actions{gap:10px}.workspace-header-actions>.primary{font-size:12px;padding:10px 12px}.followup-list-workspace .panelhead{padding:16px}}
+@media(max-width:420px){.followups-header h1{font-size:22px}.workspace-header-actions{margin-left:auto}.workspace-header-actions>.primary{font-size:11px;padding:10px}}
+
+/* Account name remains the dropdown trigger at every screen size. */
+@media(max-width:750px){.account-menu-identity{display:flex}.account-menu-identity .account-name{max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px}.account-menu-identity .muted{display:none}}
+
+/* Read-only follow-up details use the same alignment as the edit form. */
+.followup-readonly-details{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px;margin:0;padding:0 2px}
+.followup-readonly-details dt{font-size:11px;color:#74839a;margin-bottom:7px}
+.followup-readonly-details dd{font-size:14px;line-height:1.6;margin:0;overflow-wrap:anywhere}
+.followup-readonly-details .followup-purpose,.followup-readonly-details .followup-status{grid-column:1/-1}
+.followup-readonly-details .followup-status{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid #e4ebf5}
+.followup-readonly-details .followup-status dt{margin:0}
+.followup-dialog-footer{padding-top:18px;margin-top:22px;border-top:1px solid #e4ebf5}
+.followup-dialog-heading .record-open-link{display:inline-flex;align-items:center;min-height:36px;font-size:12px}
+html[data-theme=dark] .followup-readonly-details dt{color:#a8b7cd}
+html[data-theme=dark] :is(.followup-readonly-details .followup-status,.followup-dialog-footer){border-color:#34425b}
+
+/* Patient list: one clear heading, compact search, and short update labels. */
+.patient-followup-list .panelhead{padding:18px 22px}
+.patient-followup-list .patient-search{background:transparent;padding:16px 20px}
+.patient-followup-list .patient-search input{background:#fff;border-radius:8px}
+.patient-followup-list td{padding:18px}
+.patient-followup-list td:nth-child(3){color:#74839a;font-size:12px}
+.patient-followup-list .patient-record-actions{gap:7px}
+.patient-followup-list .tablefoot{padding:13px 20px;font-size:11px}
+html[data-theme=dark] .patient-followup-list .patient-search{background:transparent}
+html[data-theme=dark] .patient-followup-list .patient-search input{background:#111d30}
+html[data-theme=dark] .patient-followup-list td:nth-child(3){color:#a8b7cd}
+
+/* The entire follow-up row is an accessible target for its details. */
+.followup-clickable-row{cursor:pointer}
+.followup-clickable-row:hover{background:#f5f8ff}
+.followup-clickable-row:focus-visible{outline:2px solid #6099ff;outline-offset:-2px;background:#f0f5ff}
+html[data-theme=dark] .followup-clickable-row:hover,html[data-theme=dark] .followup-clickable-row:focus-visible{background:#22334e}
+
+/* Conversation entry point and unread count in the follow-up list. */
+.followup-chat-link{display:block;width:fit-content;text-decoration:none;color:#2463db;font-size:11px;font-weight:500;margin:9px 0 0;padding:3px 0}
+.followup-chat-link:hover{text-decoration:underline}
+.followup-chat-link .chat-unread{display:inline-block;margin-left:4px;padding:3px 6px;background:#2463db;color:#fff;border-radius:5px;font-size:9px}
+html[data-theme=dark] .followup-chat-link{color:#a9cbff}
+
+.patient-ic{display:block;font-size:11px;font-weight:400;line-height:1.6;margin-top:5px;letter-spacing:.02em}.record-summary .patient-ic{margin-bottom:0}
+
+.review-nav-link{display:flex!important;align-items:center;justify-content:space-between;gap:10px}.review-nav-badge{display:inline-flex;align-items:center;justify-content:center;min-width:21px;height:21px;padding:0 6px;border-radius:999px;background:#2463db;color:#fff;font-size:10px;font-weight:650;line-height:1;flex-shrink:0}.review-nav-badge[hidden]{display:none}html[data-theme=dark] .review-nav-badge{background:#8ab7ff;color:#13243f}
